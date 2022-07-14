@@ -5,3 +5,10 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.title {
+  font-family: cursive;
+  font-weight: 80px;
+  font-size: 80px;
+  color: black;
+}
