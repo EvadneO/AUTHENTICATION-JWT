@@ -9,7 +9,7 @@ export const Perfil = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <nav class="navbar navbar-light bg-light">
+    <nav className="navbar navbar-light bg-light">
       <div className="container">
         <div className="col-8" style={{ margin: "auto" }}>
           <CardPerfil />

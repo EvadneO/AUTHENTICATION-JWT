@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import evas from "../../img/evas.png";
 import evi from "../../img/evi.jpeg";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container">
@@ -75,8 +77,8 @@ export const Navbar = () => {
                         onClick={() => {
                           sessionStorage.setItem("Token", "");
                           sessionStorage.setItem("email", "");
-                          actions.resetUsuarioActual();
-                          history.push("/");
+                          actions.resetUsuario();
+                          window.location.href = "/perfil";
                         }}
                       >
                         <i className="fas fa-user"> Cerrar sesión </i>
