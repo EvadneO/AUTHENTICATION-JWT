@@ -6,6 +6,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container">
@@ -25,13 +26,13 @@ export const Navbar = () => {
               <h6>Hola Evadne!</h6>
             </div>
           </div>
-          <div className="col-3">
+          {/* <div className="col-3">
             <img
               src={evi}
               className=""
               style={{ width: "4rem", borderRadius: "2rem" }}
             />
-          </div>
+          </div> */}
           <div className="col-2">
             <div className="dropdown">
               <button

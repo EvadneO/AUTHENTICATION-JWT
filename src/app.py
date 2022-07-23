@@ -11,6 +11,8 @@ from api.models import db, User
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+import cryptocode
+import hashlib
 import datetime
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
@@ -71,10 +73,6 @@ def serve_any_other_file(path):
 def registro_usuario():
     data = request.get_json()
     newUser = User()
-    newUser.nombre = data['nombre']
-    newUser.apellido = data['apellido']
-    newUser.direccion = data['direccion']
-    newUser.telefono = data['telefono']
     newUser.email = data['email']
     newUser.password = data['password']
     newUser.is_active = True

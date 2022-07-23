@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 export const CardPerfil = () => {
   const { store, actions } = useContext(Context);
-  const [email, isAuthenticated, isLoading] = useState("");
+  const [isLoading] = useState("");
 
   useEffect(() => {
     actions.perfilUsuario();

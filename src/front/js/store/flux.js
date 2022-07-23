@@ -26,10 +26,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       usuarioActual: {
         email: "",
         password: "",
-        nombre: "",
-        apellidos: "",
-        telefono: "",
-        direccion: "",
       },
     },
     actions: {
@@ -66,9 +62,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             } else {
               alert("inicio de sesion fallido");
             }
-          })
-          .then((result) => {
-            console.log(result);
           })
           .catch((error) => console.log("error", error));
       },
@@ -114,34 +107,20 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     .catch((error) => console.log("error", error));
       // },
 
-      getRegistro: (
-        nombre,
-        apellidos,
-        email,
-        password,
-        telefono,
-        direccion
-      ) => {
+      getRegistro: (email, password) => {
         console.log(
           "Datos recibidos",
-          nombre,
-          apellidos,
+
           email,
-          password,
-          telefono,
-          direccion
+          password
         );
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-          nombre: nombre,
-          apellidos: apellidos,
           email: email,
           password: password,
-          telefono: telefono,
-          direccion: direccion,
         });
 
         var requestOptions = {
@@ -164,10 +143,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           email: "",
           password: "",
-          nombre: "",
-          apellido: "",
-          telefono: "",
-          direccion: "",
         });
       },
 

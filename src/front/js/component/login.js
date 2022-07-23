@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../../styles/home.css";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
-import { Perfil } from "../pages/perfil";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -44,14 +42,6 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label">Check me out</label>
         </div>
         <button
           type="submit"
